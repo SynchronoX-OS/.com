@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchrono | The Autonomous Digital Twin OS</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom font setup */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #e5e7eb;
+            /* Deeper radial gradient for premium feel */
+            background-image: radial-gradient(circle at 50% 10%, rgba(30, 41, 59, 0.5), #0d1117 80%);
+        }
+        /* Custom accent color (A slightly richer Cyan/Teal) */
+        .sync-accent {
+            color: #14b8a6; /* Teal 500 */ 
+        }
+        .sync-bg-accent {
+            background-color: #14b8a6;
+        }
+        /* Gradient for the Hero section text (Refined blue/teal blend) */
+        .hero-text-gradient {
+            background-image: linear-gradient(45deg, #6366f1, #14b8a6); /* Indigo to Teal */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+        /* Card styling with subtle outer shadow for professionalism */
+        .card-bg {
+            background-color: #1f2937;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        /* Enhanced hover effect for cards */
+        .card-bg:hover {
+            border-color: #14b8a6;
+            box-shadow: 0 0 30px rgba(20, 184, 166, 0.2);
+            transform: translateY(-3px);
+        }
+        /* Hero Placeholder styling */
+        .twin-viz {
+            background-color: #1a202c;
+            border: 2px solid #2d3748;
+            position: relative;
+            overflow: hidden;
+        }
+        .twin-viz::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            height: 80%;
+            transform: translate(-50%, -50%);
+            /* Central glow effect */
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.2) 0%, rgba(20, 184, 166, 0) 70%);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="p-4 border-b border-gray-800 sticky top-0 z-10 bg-[#0d1117]/95 backdrop-blur-sm">
+        <!-- Using relative and absolute positioning to center an element between two justified elements -->
+        <div class="max-w-7xl mx-auto flex justify-center items-center relative h-6">
+            
+            <!-- Logo (Absolute Left) -->
+            <div class="absolute left-0">
+                <div class="text-2xl font-bold hero-text-gradient">Synchrono</div>
+            </div>
+
+            <!-- Founder Info (Centered) - Only visible on desktop/large screens -->
+            <div class="hidden md:block text-xs text-center">
+                <div class="sync-accent font-semibold leading-none">Sahlan Hasan</div>
+                <div class="text-gray-500 leading-none mt-0.5">Founder & CEO</div>
+            </div>
+
+            <!-- Right Group: Navigation and Mobile Button (Absolute Right) -->
+            <div class="flex items-center space-x-6 absolute right-0">
+                <nav class="hidden md:flex space-x-6 text-sm">
+                    <a href="#problem" class="hover:text-sync-accent transition duration-200">Problem & Solution</a>
+                    <a href="#architecture" class="hover:text-sync-accent transition duration-200">The Edge OS</a>
+                    <a href="#usecases" class="hover:text-sync-accent transition duration-200">Use Cases</a>
+                    <a href="mailto:sahlanhasan08@gmail.com" class="px-4 py-2 bg-indigo-600 rounded-lg text-white font-medium hover:bg-indigo-700 transition duration-200 shadow-lg shadow-indigo-500/50">Request Demo</a>
+                </nav>
+                <button class="md:hidden text-2xl">
+                    <!-- Mobile Menu Icon (Hamburger) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 md:py-32 text-center max-w-7xl mx-auto px-4">
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight tracking-tighter mb-6">
+                The Autonomous <span class="hero-text-gradient">Digital Twin OS</span>.
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-400">
+                Synchrono is the control plane that enforces real-time consistency between the physical world and its digital twin. Zero latency. Trillion-dollar efficiency.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="mailto:sahlanhasan08@gmail.com" class="px-8 py-3 sync-bg-accent rounded-xl text-gray-900 font-bold text-lg inline-block shadow-2xl shadow-teal-500/50 transition duration-300 hover:scale-[1.03] transform hover:shadow-teal-500/70">
+                    See the Future of Control
+                </a>
+                <a href="#architecture" class="px-8 py-3 border border-gray-600 rounded-xl text-white font-medium text-lg inline-block transition duration-300 hover:border-indigo-400 hover:text-indigo-400">
+                    Learn How It Works
+                </a>
+            </div>
+            <!-- Enhanced Placeholder Visual Representation -->
+            <div class="mt-16 w-full max-w-5xl mx-auto h-64 rounded-2xl p-6 twin-viz">
+                <div class="absolute inset-0 opacity-10">
+                    <!-- Simple Grid pattern for visualization -->
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+                                <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#374151" stroke-width="0.5"/>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#grid)" />
+                    </svg>
+                </div>
+                <div class="relative z-10 flex items-center justify-center h-full">
+                    <div class="text-gray-500 text-sm md:text-xl font-mono p-4 rounded-lg bg-gray-900/50 border border-sync-accent/50">
+                        [ Live Simulation: Decentralized Control Mesh ]
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section (Retained) -->
+        <section id="problem" class="py-20 border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">The World Runs on Lag. We Fix It.</h2>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Problem 1: Latency -->
+                    <div class="card-bg p-8 rounded-xl border border-gray-700 hover:border-sync-accent hover:shadow-teal-500/30">
+                        <svg class="w-10 h-10 sync-accent mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        <h3 class="text-2xl font-semibold mb-3">Systemic Latency</h3>
+                        <p class="text-gray-400">Critical industrial decisions are delayed by sending IoT data to the cloud and waiting for the command loop. Milliseconds matter for safety and efficiency.</p>
+                    </div>
+
+                    <!-- Problem 2: Fragmentation -->
+                    <div class="card-bg p-8 rounded-xl border border-gray-700 hover:border-sync-accent hover:shadow-teal-500/30">
+                        <svg class="w-10 h-10 sync-accent mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H7l5 5-5 5h10l-5 5-5-5h10V5z"></path></svg>
+                        <h3 class="text-2xl font-semibold mb-3">Integration Fragmentation</h3>
+                        <p class="text-gray-400">Connecting Operational Technology (OT), IT, and AI requires custom, fragile middleware, leading to high cost and massive vendor lock-in.</p>
+                    </div>
+
+                    <!-- Problem 3: Governance -->
+                    <div class="card-bg p-8 rounded-xl border border-gray-700 hover:border-sync-accent hover:shadow-teal-500/30">
+                        <svg class="w-10 h-10 sync-accent mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 11V14M12 18H12.01M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12Z"></path></svg>
+                        <h3 class="text-2xl font-semibold mb-3">Compliance & Safety Gaps</h3>
+                        <p class="text-gray-400">Enforcing consistent security, ethical AI, and regulatory compliance across thousands of distributed assets is currently a manual nightmare.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section: Edge OS Concept & Basic Diagrams -->
+        <section id="architecture" class="py-20 bg-gray-900/40 border-y border-gray-800">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-6">The E-Agent: Edge OS Concept</h2>
+                <p class="text-xl text-center max-w-4xl mx-auto mb-16 text-gray-400">
+                    The core of Synchrono is the Edge-Native Agent (E-Agent), a self-contained operating system designed to run complex industrial models locally.
+                </p>
+
+                <!-- Diagram Simulation -->
+                <div class="flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-10 text-center">
+                    
+                    <!-- Step 1: Physical World Input -->
+                    <div class="flex-1 card-bg p-6 rounded-xl border border-gray-700 w-full">
+                        <div class="w-12 h-12 sync-bg-accent rounded-full mx-auto flex items-center justify-center text-gray-900 font-bold mb-4 text-xl">1</div>
+                        <h4 class="text-xl font-semibold mb-2">Physical Input</h4>
+                        <p class="text-sm text-gray-400">Real-time data from sensors and industrial controllers (PLCs, SCADA) is ingested locally by the E-Agent.</p>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="text-3xl sync-accent hidden lg:block">→</div>
+                    
+                    <!-- Step 2: E-Agent (The Core OS) -->
+                    <div class="flex-1 card-bg p-8 rounded-2xl border-4 border-indigo-500 shadow-xl shadow-indigo-500/30 w-full">
+                        <div class="w-16 h-16 bg-indigo-500 rounded-full mx-auto flex items-center justify-center text-white font-bold mb-4 text-3xl">OS</div>
+                        <h4 class="text-2xl font-bold mb-2">E-Agent: Policy Engine</h4>
+                        <p class="text-sm text-gray-300">The E-Agent computes outcomes against the Digital Twin and enforces pre-defined operational and safety policies in &lt;10ms.</p>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="text-3xl sync-accent hidden lg:block">→</div>
+
+                    <!-- Step 3: Digital Twin & Command Output -->
+                    <div class="flex-1 card-bg p-6 rounded-xl border border-gray-700 w-full">
+                        <div class="w-12 h-12 sync-bg-accent rounded-full mx-auto flex items-center justify-center text-gray-900 font-bold mb-4 text-xl">3</div>
+                        <h4 class="text-xl font-semibold mb-2">Synchronous Output</h4>
+                        <p class="text-sm text-gray-400">Autonomous commands are instantly sent back to the controller, ensuring the Digital Twin remains perfectly synchronized with the physical state.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution & Key Features (Expanded) -->
+        <section id="features" class="py-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Key Features & Capabilities</h2>
+                
+                <div class="grid lg:grid-cols-3 gap-8">
+                    
+                    <!-- Feature 1: Zero-Latency -->
+                    <div class="card-bg p-8 rounded-2xl border-t-4 border-indigo-500">
+                        <h3 class="text-3xl font-bold mb-2 sync-accent">01. Sub-10ms Loop</h3>
+                        <p class="text-gray-400 mb-4">True Edge-Native processing ensures critical command loops execute autonomously, eliminating reliance on cloud infrastructure for real-time control.</p>
+                    </div>
+
+                    <!-- Feature 2: Generative Twin -->
+                    <div class="card-bg p-8 rounded-2xl border-t-4 border-teal-500">
+                        <h3 class="text-3xl font-bold mb-2 sync-accent">02. AI-Driven Scaffolding</h3>
+                        <p class="text-gray-400 mb-4">Leverage proprietary vertical AI to instantly generate a functional Digital Twin from existing blueprints and sensor telemetry. Drastically reduce deployment time.</p>
+                    </div>
+                    
+                    <!-- Feature 3: Security & Compliance -->
+                    <div class="card-bg p-8 rounded-2xl border-t-4 border-yellow-500">
+                        <h3 class="text-3xl font-bold mb-2 sync-accent">03. Policy-as-Code</h3>
+                        <p class="text-gray-400 mb-4">Standardize safety and regulatory policies across thousands of distributed assets using a unified, auditable code framework.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section: High-Value Use Cases -->
+        <section id="usecases" class="py-20 bg-gray-900/40 border-y border-gray-800">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">High-Value Use Cases</h2>
+
+                <div class="grid md:grid-cols-4 gap-8">
+                    
+                    <div class="p-6 rounded-xl border border-gray-700 bg-gray-800/50">
+                        <h4 class="text-xl font-semibold mb-2 sync-accent">Smart Manufacturing</h4>
+                        <p class="text-sm text-gray-400">Autonomous quality control and real-time robotic coordination for next-generation production lines.</p>
+                    </div>
+
+                    <div class="p-6 rounded-xl border border-gray-700 bg-gray-800/50">
+                        <h4 class="text-xl font-semibold mb-2 sync-accent">Energy Grid Optimization</h4>
+                        <p class="text-sm text-gray-400">Decentralized load balancing and predictive maintenance on renewable energy assets (wind, solar farms).</p>
+                    </div>
+
+                    <div class="p-6 rounded-xl border border-gray-700 bg-gray-800/50">
+                        <h4 class="text-xl font-semibold mb-2 sync-accent">Global Logistics & Ports</h4>
+                        <p class="text-sm text-gray-400">Optimizing container movements and crane operations with zero-collision autonomous policy enforcement.</p>
+                    </div>
+
+                    <div class="p-6 rounded-xl border border-gray-700 bg-gray-800/50">
+                        <h4 class="text-xl font-semibold mb-2 sync-accent">Intelligent Infrastructure</h4>
+                        <p class="text-sm text-gray-400">Dynamic traffic management and adaptive environmental control in tunnels and critical public works.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section: Vision & CTA -->
+        <section id="vision" class="py-20 text-center max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl md:text-6xl font-extrabold hero-text-gradient mb-4">Our Vision: Re-platforming the Physical Economy</h2>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-10">
+                Synchrono moves humanity past optimization and into an era of autonomous industrial infrastructure. We are building the mandatory foundation for the next industrial revolution.
+            </p>
+            
+            <!-- New Section: Pilot Program -->
+            <div id="pilot" class="bg-indigo-700/30 p-8 md:p-12 rounded-2xl border border-indigo-600 max-w-3xl mx-auto shadow-2xl shadow-indigo-500/30">
+                <h3 class="text-3xl font-bold text-white mb-4">Synchrono: Founding Partners Program</h3>
+                <p class="text-lg text-indigo-200 mb-6">
+                    We are currently onboarding a select group of industry leaders to co-develop the future of Edge OS. Access our Generative Twin tooling and E-Agent framework today.
+                </p>
+                <a href="mailto:sahlanhasan08@gmail.com" class="px-10 py-4 sync-bg-accent rounded-xl text-gray-900 font-bold text-xl inline-block shadow-2xl shadow-teal-500/50 transition duration-300 hover:bg-teal-400 transform hover:scale-[1.05]">
+                    Apply for the Pilot Program
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer & Contact Section -->
+    <footer id="contact" class="bg-[#121820] py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="text-2xl font-bold hero-text-gradient mb-4">Synchrono</div>
+                <p class="text-sm text-gray-400">Operating System for the Physical World.</p>
+                <div class="mt-4 text-xs text-gray-600">© 2025 Synchrono Inc. All rights reserved.</div>
+            </div>
+            
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-white">Platform</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#architecture" class="hover:text-sync-accent">Edge Architecture</a></li>
+                    <li><a href="#features" class="hover:text-sync-accent">Generative Twins</a></li>
+                    <li><a href="#usecases" class="hover:text-sync-accent">Use Cases</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-white">Company</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#vision" class="hover:text-sync-accent">Our Vision</a></li>
+                    <li><a href="#pilot" class="hover:text-sync-accent">Pilot Program</a></li>
+                    <li><a href="#" class="hover:text-sync-accent">Careers (10x Engineers)</a></li>
+                </ul>
+            </div>
+
+            <!-- Simple Contact/Demo Form (Mock) -->
+            <div class="md:col-span-1">
+                <h4 class="text-lg font-semibold mb-4 text-white">Schedule a Deep Dive</h4>
+                <form class="space-y-3" action="mailto:sahlanhasan08@gmail.com" method="post" enctype="text/plain">
+                    <input type="email" name="email" placeholder="Work Email" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:ring-sync-accent focus:border-sync-accent">
+                    <!-- This button now acts as the submitter for the mailto form -->
+                    <button type="submit" class="w-full p-3 sync-bg-accent rounded-lg text-gray-900 font-bold hover:bg-teal-400 transition duration-200">
+                        Book a Meeting
+                    </button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
